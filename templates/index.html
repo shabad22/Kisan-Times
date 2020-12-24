@@ -1,0 +1,206 @@
+<head>
+  <title>Kisan Times</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/container.css')}}">
+  <link defer href="{{url_for('static', filename='js/theme.js')}}">
+
+
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap"
+    rel="stylesheet"
+  />
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <ul class="navbar-nav">
+      <li class="logo">
+        <a href="#" class="nav-link">
+          <span class="link-text logo-text">ਕਿਸਾਨ ਟਾਈਮਜ਼</span>
+          <svg
+            aria-hidden="true"
+            focusable="false"
+            data-prefix="fad"
+            data-icon="angle-double-right"
+            role="img"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 448 512"
+            class="svg-inline--fa fa-angle-double-right fa-w-14 fa-5x"
+          >
+            <g class="fa-group">
+              <path
+                fill="currentColor"
+                d="M224 273L88.37 409a23.78 23.78 0 0 1-33.8 0L32 386.36a23.94 23.94 0 0 1 0-33.89l96.13-96.37L32 159.73a23.94 23.94 0 0 1 0-33.89l22.44-22.79a23.78 23.78 0 0 1 33.8 0L223.88 239a23.94 23.94 0 0 1 .1 34z"
+                class="fa-secondary"
+              ></path>
+              <path
+                fill="currentColor"
+                d="M415.89 273L280.34 409a23.77 23.77 0 0 1-33.79 0L224 386.26a23.94 23.94 0 0 1 0-33.89L320.11 256l-96-96.47a23.94 23.94 0 0 1 0-33.89l22.52-22.59a23.77 23.77 0 0 1 33.79 0L416 239a24 24 0 0 1-.11 34z"
+                class="fa-primary"
+              ></path>
+            </g>
+          </svg>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a href="{{url_for('index')}}" class="nav-link">
+          <i class="fas fa-home fa-2x" ></i>
+          <span class="link-text">ਹੋਮ / Home</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a href="{{url_for('new')}}" class="nav-link">
+          <i class="fas fa-plus fa-2x" style="padding-left: 5px;"></i>
+          <span class="link-text">ਨਵਾਂ / New</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a href="#" class="nav-link">
+          <i class="fas fa-pencil-alt fa-2x"></i>
+          <span class="link-text">ਐਡਿਟ / Edit</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a href="#" class="nav-link">
+          <i class="fas fa-id-card fa-2x"></i>
+          <span class="link-text">ਪ੍ਰੋਫਾਈਲ / Profile</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a href="{{ url_for('login') }}" class="nav-link">
+          <i class="fas fa-sign-in-alt fa-2x"></i>
+          <span class="link-text">ਲਾਗਿਨ / Login</span>
+        </a>
+      </li>
+
+
+      <li class="nav-item" id="themeButton">
+        <a href="#" class="nav-link">
+          <i class="fas fa-users fa-2x"></i>
+          <span class="link-text">ਸਾਡੇ ਬਾਰੇ / About</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages %}
+        <center><article class="message"><header class="card-header"><p>{{ message }}<p></header></article></center>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+  <p style="padding-top: 20px;"><center><h1><code>ਸੰਯੁਕਤ ਕਿਸਾਨ ਮੋਰਚਾ</code></h1></center></p>
+  <main>
+    <section class="card-list">
+      <article class="card">
+        <header class="card-header">
+          <p>Dec 19th 2020</p>
+          <h2>Here is why the farmer bills are wrong.</h2>
+        </header>
+  
+        <div class="card-author">
+          <a class="author-avatar" href="#">
+            <img src="{{url_for('static', filename='img/mask.jpg')}}" />
+          </a>
+          <svg class="half-circle" viewBox="0 0 106 57">
+            <path d="M102 4c0 27.1-21.9 49-49 49S4 31.1 4 4"></path>
+          </svg>
+  
+          <div class="author-name">
+            <div class="author-name-prefix">Author</div>
+            <a>Shabad</a>
+          </div>
+        </div>
+        <div class="tags">
+          <a href="#">kisan</a>
+          <a href="#">article</a>
+          <a href="#">english</a>
+        </div>
+      </article>
+      <article class="card">
+        <header class="card-header">
+          <p>Dec 20th 2020</p>
+          <h2>Punjabi Poem</h2>
+        </header>
+  
+        <div class="card-author">
+          <a class="author-avatar" href="#">
+            <img src="mask.png" />
+          </a>
+          <svg class="half-circle" viewBox="0 0 106 57">
+            <path d="M102 4c0 27.1-21.9 49-49 49S4 31.1 4 4"></path>
+          </svg>
+  
+          <div class="author-name">
+            <div class="author-name-prefix">Author</div>
+            <a>Gursheen</a>
+          </div>
+        </div>
+        <div class="tags">
+          <a href="#">kisan</a>
+          <a href="#">poem</a>
+          <a href="#">punjabi</a>
+        </div>
+      </article>
+      <article class="card">
+        <header class="card-header">
+          <p>Sep 11th 2020</p>
+          <h2>Never forget</h2>
+        </header>
+  
+        <div class="card-author">
+          <a class="author-avatar" href="#">
+            <img src="mask.png" />
+          </a>
+          <svg class="half-circle" viewBox="0 0 106 57">
+            <path d="M102 4c0 27.1-21.9 49-49 49S4 31.1 4 4"></path>
+          </svg>
+  
+          <div class="author-name">
+            <div class="author-name-prefix">Author</div>
+            Jeff Delaney
+          </div>
+        </div>
+        <div class="tags">
+          <a href="#">html</a>
+          <a href="#">css</a>
+          <a href="#">web-dev</a>
+        </div>
+      </article>
+      <article class="card">
+        <header class="card-header">
+          <p>Sep 11th 2020</p>
+          <h2>Never forget</h2>
+        </header>
+  
+        <div class="card-author">
+          <a class="author-avatar" href="#">
+            <img src="mask.png" />
+          </a>
+          <svg class="half-circle" viewBox="0 0 106 57">
+            <path d="M102 4c0 27.1-21.9 49-49 49S4 31.1 4 4"></path>
+          </svg>
+  
+          <div class="author-name">
+            <div class="author-name-prefix">Author</div>
+            Jeff Delaney
+          </div>
+        </div>
+        <div class="tags">
+          <a href="#">html</a>
+          <a href="#">css</a>
+          <a href="#">web-dev</a>
+        </div>
+      </article>
+    </section>  
+  </main>
+  
+</body>

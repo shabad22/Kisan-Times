@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}Login{% endblock title %}
+
+{% block content %}
+<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+<img class="wave" src="{{url_for('static', filename='img/wave.png')}}">
+<div class="container">
+    <div class="img">
+        <img src="{{url_for('static', filename='img/crops.png')}}" style="opacity: 0;">
+    </div>
+    <div class="login-content">
+        <form method="POST" action="/login">
+            <center><img src="{{url_for('static', filename='img/avatar.png')}}"></center>
+            <h2 class="title">Sign In</h2>
+            <div class="input-div one">
+                <div class="i">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="div">
+                    <h5>{{ form.email.label }}</h5>
+                    <input type="text" class="input">
+                </div>
+            </div>
+            <div class="input-div pass">
+                <div class="i">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <div class="div">
+                    <h5>{{ form.password.label }}</h5>
+                    <input type="password" class="input">
+                </div>
+            </div>
+            <a href="{{url_for('register')}}">Need an account?</a>
+            {{ form.submit(class='btn') }}
+        </form>
+    </div>
+</div>
+<script type="text/javascript" src="{{url_for('static', filename='js/forms.js')}}"></script>
+{% endblock content %}

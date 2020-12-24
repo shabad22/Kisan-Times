@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block title %}Register{% endblock title %}
+{% block content %}
+<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+<img class="wave" src="{{url_for('static', filename='img/wave.png')}}">
+<div class="container">
+    <div class="img">
+        <img src="{{url_for('static', filename='img/crops.png')}}" style="opacity: 0;">
+    </div>
+    <div class="login-content">
+        <form method="POST" action="/register">
+            <center><img src="{{url_for('static', filename='img/avatar.png')}}"></center>
+            <h2 class="title">Register</h2>
+            <div class="input-div one">
+                <div class="i">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="div">
+                    <h5>{{ form.username.label }}</h5>
+                    {{form.username(class='input')}}
+                </div>
+            </div>
+            <div class="input-div one">
+                <div class="i">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="div">
+                    <h5>{{ form.email.label }}</h5>
+                    {{form.email(class='input')}}
+                </div>
+            </div>
+            <div class="input-div pass">
+                <div class="i">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <div class="div">
+                    <h5>{{ form.password.label }}</h5>
+                    {{form.password(class='input')}}
+                </div>
+            </div>
+            <a href="{{url_for('login')}}">Already have an account?</a>
+            {{ form.submit(class='btn') }}
+        </form>
+    </div>
+</div>
+<script type="text/javascript" src="{{url_for('static', filename='js/forms.js')}}"></script>
+{% endblock content %}
