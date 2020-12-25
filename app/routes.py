@@ -1,5 +1,5 @@
 from flask import render_template, flash, redirect, url_for
-from app import app
+from app import app, database as db
 from app.scripts.models import User, Post
 from app.scripts.forms import Login, Register
 
@@ -41,6 +41,9 @@ def register():
     form = Register()
 
     if form.is_submitted():
+        user = User(email=form.email.data,username=form.username.data,password=form.password.data)
+        db.session.add(user)
+        db.session.commit()
         print('Validated')
         flash(f'Account created for {form.username.data}!')
         return redirect(url_for('index'))
